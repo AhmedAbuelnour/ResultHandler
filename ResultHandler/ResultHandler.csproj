@@ -1,9 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>1.2</Version>
+    <Authors>Ahmed Abuelnour</Authors>
+    <Company>Personal</Company>
+    <Description>Gives you a way to implement a result pattern</Description>
+    <PackageProjectUrl>https://github.com/AhmedAbuelnour/ResultHandler</PackageProjectUrl>
+	<PackageIconUrl>https://api.nuget.org/v3-flatcontainer/resulthandler/1.1.0/icon</PackageIconUrl>
   </PropertyGroup>
 
 </Project>

@@ -11,6 +11,10 @@
     {
         public T? Value { get; set; }
     }
+    public class CommitResults<T> : CommitResult
+    {
+        public IEnumerable<T>? Value { get; set; }
+    }
     public enum ResultType
     {
         Ok,
@@ -20,6 +24,7 @@
         NotFound,
         PermissionDenied,
         Unexpected,
-        Exception
+        Exception,
+        Duplicated
     }
 }
