@@ -3,9 +3,9 @@
     public class CommitResult
     {
         public string? ErrorMessage { get; set; }
-        public int? ErrorCode { get; set; }
+        public string? ErrorCode { get; set; }
         public ResultType ResultType { get; set; }
-        public bool IsSuccess { get => !ErrorCode.HasValue; }
+        public bool IsSuccess { get => string.IsNullOrEmpty(ErrorCode); }
     }
     public class CommitResult<T> : CommitResult
     {

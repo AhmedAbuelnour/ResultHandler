@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.3</Version>
+    <Version>1.2</Version>
     <Authors>Ahmed Abuelnour</Authors>
     <Company>Personal</Company>
     <Description>Gives you a way to implement a result pattern</Description>
