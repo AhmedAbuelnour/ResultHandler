@@ -2,29 +2,46 @@
 {
     public class CommitResult
     {
-        public string? ErrorMessage { get; set; }
-        public string? ErrorCode { get; set; }
-        public ResultType ResultType { get; set; }
+        public CommitResult(ResultType resultType = ResultType.Ok, string? errorMessage = default, string? errorCode = default)
+        {
+            ResultType = resultType;
+            ErrorMessage = errorMessage;
+            ErrorCode = errorCode;
+        }
+        public string? ErrorMessage { get; init; }
+        public string? ErrorCode { get; init; }
+        public ResultType ResultType { get; init; }
         public bool IsSuccess { get => string.IsNullOrEmpty(ErrorCode); }
     }
     public class CommitResult<T> : CommitResult
     {
-        public T? Value { get; set; }
+        public CommitResult(T value, ResultType resultType = ResultType.Ok, string? errorMessage = default, string? errorCode = default) : base(resultType, errorMessage, errorCode)
+        {
+            Value = value;
+        }
+
+        public T? Value { get; init; }
     }
     public class CommitResults<T> : CommitResult
     {
+        public CommitResults(IEnumerable<T> value, ResultType resultType = ResultType.Ok, string? errorMessage = default, string? errorCode = default) : base(resultType, errorMessage, errorCode)
+        {
+            Value = value;
+        }
         public IEnumerable<T>? Value { get; set; }
     }
     public enum ResultType
     {
         Ok,
+        Empty,
         Invalid,
         Unauthorized,
-        PartialOk,
         NotFound,
-        PermissionDenied,
-        Unexpected,
+        InvalidValidation,
         Exception,
-        Duplicated
+        Duplicated,
+        InternalServerError,
+        MethodNotAllowed,
+        Others
     }
 }
